@@ -24,6 +24,8 @@ class MovieDetailViewModel {
     init(movieDetailDataFetcher:MovieDeatilDataFetcherProtocol) {
         self.movieDetailFetcher = movieDetailDataFetcher
         self.viewDidload = { [weak self](urlStr) in
+            self?.titleText = "Detail"
+
             self?.fetchData(urlStr)
         }
     }
@@ -74,7 +76,6 @@ class MovieDetailViewModel {
    private func configureOutput(){
     let actorCount = (self.dataActorModelArray.count > 5) ? 5 :  self.dataActorModelArray.count
     numberOfRows = staticNumberOfCellCount + actorCount
-    self.titleText = self.dataModel?.movieTitle ?? ""
 
     }
     
