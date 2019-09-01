@@ -7,8 +7,13 @@
 //
 
 import Foundation
-
+import NotificationBannerSwift
 class Util {
+   static func showUnderdevelopment() {
+        let banner = StatusBarNotificationBanner(title: "Under Development", style: .danger)
+        banner.show()
+    }
+
     static func getToken() throws -> String {
         let userDef = UserDefaults.standard
         guard let token = userDef.object(forKey: "token") as? String  else {
