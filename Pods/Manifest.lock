@@ -1,0 +1,20 @@
+PODS:
+  - CarbonKit (2.3.0)
+  - Kingfisher (4.10.1)
+
+DEPENDENCIES:
+  - CarbonKit
+  - Kingfisher
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CarbonKit
+    - Kingfisher
+
+SPEC CHECKSUMS:
+  CarbonKit: fbbf0809ab18b33817a09da2591fc7ee9be7b17c
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+
+PODFILE CHECKSUM: 26ba4989ac49403756d180a989f976e7ebe5c621
+
+COCOAPODS: 1.7.5
