@@ -1,20 +1,32 @@
 PODS:
   - CarbonKit (2.3.0)
   - Kingfisher (4.10.1)
+  - MarqueeLabel/Swift (3.2.1)
+  - NotificationBannerSwift (2.1.0):
+    - MarqueeLabel/Swift (~> 3.2.1)
+    - SnapKit (~> 4.2.0)
+  - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - CarbonKit
   - Kingfisher
+  - NotificationBannerSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CarbonKit
     - Kingfisher
+    - MarqueeLabel
+    - NotificationBannerSwift
+    - SnapKit
 
 SPEC CHECKSUMS:
   CarbonKit: fbbf0809ab18b33817a09da2591fc7ee9be7b17c
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
+  NotificationBannerSwift: 4483919639202bec56d6bfe8f106ebc352d38bc7
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 26ba4989ac49403756d180a989f976e7ebe5c621
+PODFILE CHECKSUM: c7fe27bc22193505bdfa7ff1c74a5dd75d84e521
 
 COCOAPODS: 1.7.5

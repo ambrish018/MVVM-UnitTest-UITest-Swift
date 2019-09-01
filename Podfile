@@ -8,6 +8,7 @@ target 'MovieApp' do
   # Pods for MovieApp
   pod 'CarbonKit'
   pod 'Kingfisher'
+  pod 'NotificationBannerSwift'
 
   target 'MovieAppTests' do
     inherit! :search_paths

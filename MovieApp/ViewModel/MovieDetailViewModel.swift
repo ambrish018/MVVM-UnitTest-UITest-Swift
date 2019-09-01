@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import NotificationBannerSwift
 class MovieDetailViewModel {
     //OutPut
     var numberOfRows = 0
@@ -20,7 +20,7 @@ class MovieDetailViewModel {
     var callBack : ()->() = {}
     private let staticNumberOfCellCount = 3
     private var dataModel : MovieDetailModel!
-    private var dataActorModelArray : [Actor] = [Actor]() 
+    private var dataActorModelArray : [Actor] = [Actor]()
     init(movieDetailDataFetcher:MovieDeatilDataFetcherProtocol) {
         self.movieDetailFetcher = movieDetailDataFetcher
         self.viewDidload = { [weak self](urlStr) in
@@ -38,16 +38,23 @@ class MovieDetailViewModel {
             //TO DO
             if errorString == nil{
             self?.dataModel = movieDetail
-                group.leave()
+            }else {
+               self?.showError()
             }
+            group.leave()
+
         }
         
         group.enter()
         self.movieDetailFetcher.fetchMovieCredits(movieDetailUrlStr: urlString) {[weak self] (actorData, errorString) in
             if errorString == nil{
                 self?.dataActorModelArray = actorData?.casts ?? [Actor]()
-                group.leave()
+            }else{
+                self?.showError()
             }
+            group.leave()
+
+            
         }
         group.wait()
 
@@ -88,4 +95,10 @@ class MovieDetailViewModel {
         return ActorCellModel(actorModel: self.dataActorModelArray[index])
     }
     
+}
+extension MovieDetailViewModel {
+    func showError() {
+        let banner = StatusBarNotificationBanner(title: "Error in Finding Details", style: .danger)
+        banner.show()
+    }
 }
